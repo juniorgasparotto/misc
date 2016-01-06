@@ -1,0 +1,6 @@
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\MegaSenaGenerate\bin\Debug\MegaSenaGenerate.exe.config
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\MegaSenaGenerate\bin\Debug\MegaSenaGenerate.exe
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\MegaSenaGenerate\bin\Debug\MegaSenaGenerate.pdb
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\MegaSenaGenerate\obj\Debug\MegaSenaGenerate.csprojResolveAssemblyReference.cache
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\MegaSenaGenerate\obj\Debug\MegaSenaGenerate.exe
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\MegaSenaGenerate\obj\Debug\MegaSenaGenerate.pdb
