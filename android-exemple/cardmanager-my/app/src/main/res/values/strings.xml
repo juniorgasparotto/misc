@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Card Manager</string>
+    <string name="title_activity_main">card manager</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_terms">termos de uso</string>
+    <string name="title_activity_register">solicitar cadastro</string>
+    <string name="title_activity_my_cards">meus cartões</string>
+    <string name="title_activity_extracts">card manager</string>
+    <string name="title_activity_payment_pending">agendamentos pendentes</string>
+    <string name="title_activity_payment_schedule">agendar pagamento</string>
+    <string name="title_activity_about">sobre</string>
+    <string name="action_settings">Settings</string>
+    <string name="txt_login_name">E-mail</string>
+    <string name="txt_login_pwd">Senha</string>
+    <string name="btn_login_text">Entrar</string>
+    <string name="btn_new_register_text">Solicitar cadastro</string>
+    <string name="txt_login_name_empty">O campo e-mail é obrigatório</string>
+    <string name="txt_login_name_invalid">O campo e-mail esta inválido</string>
+    <string name="txt_login_pwd_empty">Você não informou a senha</string>
+    <string name="loading_text">Efeturando login...</string>
+    <string name="error_unexpected">Ocorreu um erro inesperado, tente novamente mais tarde</string>
+    <string name="error_title">Ocorreu um erro</string>
+    <string name="ok_label">Ok</string>
+    <string name="error_can_not_verify_internet_permission">Não é possível verificar se existe permissão de internet.</string>
+    <string name="error_without_internet_permission">Não existe permissão de internet</string>
+    <string name="error_is_not_online">Não há conexão com a internet, por favor, fique online.</string>
+    <string name="btn_open_cam_text">Ler cartão pela camera</string>
+    <string name="btn_register_text">Solicitar cadastro</string>
+    <string name="txt_name_text">Nome</string>
+    <string name="txt_email_text">E-mail</string>
+    <string name="txt_phone_number_text">Telefone</string>
+    <string name="txt_card_number_text">Número do cartão</string>
+
+    <string name="chk_accept_terms_text">Li e concordo com os termos de uso</string>
+    <string name="chk_accept_terms_text_clicable">termos de uso</string>
+
+    <string name="register_error_name_empty">O campo nome não pode ser vazio</string>
+    <string name="register_error_name_invalid">O campo nome está inválido</string>
+    <string name="register_error_email_empty">O campo e-mail não pode ser vazio</string>
+    <string name="register_error_email_invalid">O campo e-mail está inválido</string>
+    <string name="register_error_phone_number_empty">O campo telefone não pode ser vazio</string>
+    <string name="register_error_phone_number_empty_invalid">O campo telefone está inválido</string>
+    <string name="register_error_card_number_empty">O campo número do cartão não pode ser vazio</string>
+    <string name="register_error_card_number_empty_invalid">O campo número do cartão está inválido</string>
+    <string name="register_error_terms_not_accepted_invalid">Você não aceitou os termos de uso</string>
+    <string name="error_cant_read_can_number">Não foi possível ler o número do cartão da camera</string>
+    <string name="register_error_name_less_three_chars">Cada parte do nome deve ter ao menos 3 caracteres.</string>
+    <string name="register_error_name_without_last_name">O sobrenome não foi informado</string>
+    <string name="menu_my_cards_text">Meus cartões</string>
+    <string name="menu_extract_text">Extrato</string>
+    <string name="menu_scheduling_payment_text">Agendar pagamento</string>
+    <string name="menu_about_text">Sobre</string>
+    <string name="card_limit_date_text">Data de vencimento</string>
+    <string name="card_limit_avaiable_text">Limite disponível</string>
+    <string name="card_current_debit_value_text">Valor da fatura em aberto</string>
+    <string name="format_coin">R$</string>
+
+</resources>

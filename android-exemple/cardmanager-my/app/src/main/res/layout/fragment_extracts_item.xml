@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@drawable/rounded_corner"
+    android:layout_marginBottom="4dp"
+>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:text="A"
+            android:id="@+id/txt_purchase_price"
+            android:layout_height="wrap_content"
+            android:layout_width="91dp"
+            android:fontFamily="Roboto-Bold"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="14dp"
+            android:textSize="14sp"
+        />
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="34dp"
+            android:background="@color/warm_grey_two"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+        />
+
+        <TextView
+            android:text="B ah ajsdhaj jajsdhjas "
+            android:id="@+id/txt_purchase_title"
+            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:fontFamily="Roboto-Bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="12dp"
+            android:textSize="16sp"
+        />
+    </LinearLayout>
+
+    <TextView
+        android:text="12/12/2000"
+        android:id="@+id/txt_purchase_date"
+        android:layout_height="13dp"
+        android:layout_width="54dp"
+        android:fontFamily="Roboto-Bold"
+        android:layout_marginRight="10dp"
+        android:textSize="10sp"
+        android:height="10dp"
+        android:width="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+    />
+
+
+</RelativeLayout>

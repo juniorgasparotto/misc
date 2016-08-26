@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_my_cards"
+            android:checked="true"
+            android:icon="@drawable/ico_cartoes"
+            android:title="@string/menu_my_cards_text" />
+        <item
+            android:id="@+id/menu_extract"
+            android:icon="@drawable/ico_extrato"
+            android:title="@string/menu_extract_text" />
+        <item
+            android:id="@+id/menu_scheduling_payment"
+            android:icon="@drawable/ico_agendar"
+            android:title="@string/menu_scheduling_payment_text" />
+        <item
+            android:id="@+id/menu_about"
+            android:icon="@drawable/ico_sobre"
+            android:title="@string/menu_about_text"
+        />
+    </group>
+</menu>
