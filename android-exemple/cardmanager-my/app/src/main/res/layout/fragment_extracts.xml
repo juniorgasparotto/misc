@@ -16,7 +16,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listheader="@layout/fragment_extracts_header"
         android:divider="@android:color/transparent"
         android:dividerHeight="4dp"
     />

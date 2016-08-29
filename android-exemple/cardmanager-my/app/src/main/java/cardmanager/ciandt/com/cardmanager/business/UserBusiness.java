@@ -66,7 +66,7 @@ public class UserBusiness {
         {
             result.error = new OperationError();
             result.error.code = OperationError.ERROR_CODE_UNKNOWN;
-            result.error.message = ex.getMessage();
+            result.error.message = ex.toString();
             result.type = OperationResult.ResultType.ERROR;
         }
 
@@ -89,7 +89,7 @@ public class UserBusiness {
         catch (Exception ex) {
             result.error = new OperationError();
             result.error.code = OperationError.ERROR_CODE_UNKNOWN;
-            result.error.message = ex.getMessage();
+            result.error.message = ex.toString();
             result.type = OperationResult.ResultType.ERROR;
         }
 
@@ -108,7 +108,7 @@ public class UserBusiness {
         {
             result.error = new OperationError();
             result.error.code = OperationError.ERROR_CODE_UNKNOWN;
-            result.error.message = ex.getMessage();
+            result.error.message = ex.toString();
             result.type = OperationResult.ResultType.ERROR;
         }
 
@@ -125,7 +125,7 @@ public class UserBusiness {
         {
             result.error = new OperationError();
             result.error.code = OperationError.ERROR_CODE_UNKNOWN;
-            result.error.message = ex.getMessage();
+            result.error.message = ex.toString();
             result.type = OperationResult.ResultType.ERROR;
         }
 

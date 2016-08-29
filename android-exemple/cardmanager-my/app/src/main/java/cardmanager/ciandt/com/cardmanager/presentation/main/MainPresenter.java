@@ -76,8 +76,8 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     @Override
-    public void openPaymentSchedule() {
-        mView.openPaymentSchedule();
+    public void openPaymentsPending() {
+        mView.openPaymentsPending();
     }
 
     @Override

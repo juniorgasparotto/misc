@@ -14,7 +14,7 @@ public interface MainContract {
         void homeOrMantainLastFragment(boolean forceHome);
         void openMyCards();
         void openExtracts();
-        void openPaymentSchedule();
+        void openPaymentsPending();
         void openAbout();
         void openHome();
     }
@@ -23,7 +23,7 @@ public interface MainContract {
         void configureAppToUser();
         void openMyCards();
         void openExtracts();
-        void openPaymentSchedule();
+        void openPaymentsPending();
         void openAbout();
         void openHome();
     }

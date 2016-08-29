@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#ff7832</color>
     <color name="colorAccent">#ff7832</color>
     <color name="white">#FFFFFF</color>
+    <color name="white2">#f9f7f7</color>
     <color name="color_button">#3b4f4e4d</color>
     <color name="dialog_background_color">#F9F7F7</color>
     <color name="warm_grey">#727272</color>

@@ -16,7 +16,9 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import cardmanager.ciandt.com.cardmanager.R;
 import cardmanager.ciandt.com.cardmanager.data.repository.sharedpreferences.SharedPreferencesRepository;
@@ -147,5 +149,10 @@ public final class Utils {
     public static String formatPrice(Context context, String value) {
         String format = context.getString(R.string.format_coin);
         return format + " " + value;
+    }
+
+    public static String formatDate(Context context, Date date, int formatResId) {
+        SimpleDateFormat dt1 = new SimpleDateFormat(context.getString(formatResId));
+        return dt1.format(date);
     }
 }

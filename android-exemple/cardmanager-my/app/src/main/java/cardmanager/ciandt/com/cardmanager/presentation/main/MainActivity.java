@@ -22,7 +22,7 @@ import cardmanager.ciandt.com.cardmanager.presentation.about.AboutFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.card.CardFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.extracts.ExtractsFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.mycards.MyCardsFragment;
-import cardmanager.ciandt.com.cardmanager.presentation.paymentschedule.PaymentScheduleFragment;
+import cardmanager.ciandt.com.cardmanager.presentation.payment.PaymentsFragment;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                         break;
 
                     case R.id.menu_scheduling_payment:
-                        mPresenter.openPaymentSchedule();
+                        mPresenter.openPaymentsPending();
                         break;
 
                     case R.id.menu_about:
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             } else if (mCurrentFragment.getTag() == TAG_EXTRACTS_FRAGMENT) {
                 mPresenter.openExtracts();
             } else if (mCurrentFragment.getTag() == TAG_PAYMENT_SCHEDULE_FRAGMENT) {
-                mPresenter.openPaymentSchedule();
+                mPresenter.openPaymentsPending();
             } else if (mCurrentFragment.getTag() == TAG_ABOUT_FRAGMENT) {
                 mPresenter.openAbout();
             }
@@ -205,9 +205,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void openPaymentSchedule() {
+    public void openPaymentsPending() {
         if (mCurrentFragment == null || mCurrentFragment.getTag() != TAG_PAYMENT_SCHEDULE_FRAGMENT) {
-            mCurrentFragment = new PaymentScheduleFragment();
+            mCurrentFragment = new PaymentsFragment();
             updateDisplay(mCurrentFragment, TAG_PAYMENT_SCHEDULE_FRAGMENT);
         }
 

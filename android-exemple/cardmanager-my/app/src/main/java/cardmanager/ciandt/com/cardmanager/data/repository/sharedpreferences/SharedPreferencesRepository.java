@@ -5,6 +5,11 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import cardmanager.ciandt.com.cardmanager.data.model.User;
 
 /**
@@ -35,6 +40,14 @@ public class SharedPreferencesRepository {
             return gson.fromJson(json, clazz);
         }
 
+        return null;
+    }
+
+    public <T> ArrayList<T> getList(String key, Class<T[]> clazz) {
+        Gson gson = new Gson();
+        T[] array = gson.fromJson(mSharedPreferences.getString(key, null), clazz);
+        if (array != null)
+            return new ArrayList<>(Arrays.asList(array));
         return null;
     }
 
