@@ -65,12 +65,8 @@ public class CardManagerStartUp extends BroadcastReceiver {
     }
 
     public void setPayments(ArrayList<Payment> payments) {
-        String toas = "";
         for (Payment payment : payments) {
             SchedulePaymentNotify.setAlarm(this.mContext, payment.date.getTime());
-            toas += payment.name + ",";
         }
-
-        Toast.makeText(this.mContext, toas, Toast.LENGTH_SHORT).show();
     }
 }
