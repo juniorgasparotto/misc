@@ -22,6 +22,7 @@ import cardmanager.ciandt.com.cardmanager.infrastructure.Utils;
 import cardmanager.ciandt.com.cardmanager.presentation.main.MainActivity;
 
 public class PaymentsFragment extends Fragment implements PaymentsContract.View {
+    private static final int ADD_RESULT = 10001;
     private PaymentsContract.Presenter mPresenter;
     private User mUser;
     private ListView mList;
@@ -55,8 +56,7 @@ public class PaymentsFragment extends Fragment implements PaymentsContract.View 
         mList = (ListView)rootView.findViewById(R.id.schedule_listview);
 
         // load
-        mPresenter.loadLoggedUser();
-
+        load();
 
         return rootView;
     }
@@ -86,7 +86,15 @@ public class PaymentsFragment extends Fragment implements PaymentsContract.View 
     @Override
     public void openAddPayment() {
         Intent intent = new Intent(getContext(), SchedulePaymentActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, PaymentsFragment.ADD_RESULT);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PaymentsFragment.ADD_RESULT)
+            this.load();
+
     }
 
     @Override
@@ -97,7 +105,7 @@ public class PaymentsFragment extends Fragment implements PaymentsContract.View 
     }
 
     @Override
-    public void refresh(Payment payments) {
+    public void load() {
         mPresenter.loadLoggedUser();
     }
 
@@ -125,4 +133,6 @@ public class PaymentsFragment extends Fragment implements PaymentsContract.View 
     public void showDefaultDialogError(String message) {
         Utils.showDefaultDialogError(this.getContext(), message);
     }
+
+
 }

@@ -4,11 +4,15 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Patterns;
 
+import java.util.ArrayList;
+
 import cardmanager.ciandt.com.cardmanager.R;
+import cardmanager.ciandt.com.cardmanager.data.model.Payment;
 import cardmanager.ciandt.com.cardmanager.data.model.User;
 import cardmanager.ciandt.com.cardmanager.infrastructure.OperationError;
 import cardmanager.ciandt.com.cardmanager.infrastructure.OperationListener;
 import cardmanager.ciandt.com.cardmanager.infrastructure.Utils;
+import cardmanager.ciandt.com.cardmanager.manager.PaymentManager;
 import cardmanager.ciandt.com.cardmanager.manager.UserManager;
 import cardmanager.ciandt.com.cardmanager.presentation.register.RegisterContract;
 
@@ -47,6 +51,70 @@ public class MainPresenter implements MainContract.Presenter {
         }
     };
 
+    private final OperationListener<ArrayList<Payment>> mUpdatePaymentsOverDueCallBack = new OperationListener<ArrayList<Payment>>() {
+
+        @Override
+        public void onPreExecute() {
+            mView.showLoading();
+        }
+
+        @Override
+        public void onSuccess(ArrayList<Payment> payments) {
+            mView.updateDialogNotificationForPaymentsOverDue(payments);
+        }
+
+        @Override
+        public void onError(OperationError error) {
+            if (error.code == OperationError.ERROR_CODE_SERVER_WITH_MESSAGE) {
+                mView.showDialogError(error.message);
+            } else {
+                mView.showDefaultDialogError(error.message);
+            }
+        }
+
+        @Override
+        public void onCancel() {
+            mView.hideLoading();
+        }
+
+        @Override
+        public void onPostExecute() {
+            mView.hideLoading();
+        }
+    };
+
+    private final OperationListener<Void> mRemovePaymentsOverDueCallBack = new OperationListener<Void>() {
+
+        @Override
+        public void onPreExecute() {
+            mView.showLoading();
+        }
+
+        @Override
+        public void onSuccess(Void payments) {
+
+        }
+
+        @Override
+        public void onError(OperationError error) {
+            if (error.code == OperationError.ERROR_CODE_SERVER_WITH_MESSAGE) {
+                mView.showDialogError(error.message);
+            } else {
+                mView.showDefaultDialogError(error.message);
+            }
+        }
+
+        @Override
+        public void onCancel() {
+            mView.hideLoading();
+        }
+
+        @Override
+        public void onPostExecute() {
+            mView.hideLoading();
+        }
+    };
+
     public MainPresenter(Context context, MainContract.View view)
     {
         this.mContext = context;
@@ -63,6 +131,18 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void openHome() {
         mView.openHome();
+    }
+
+    @Override
+    public void startDialogNotificationForPaymentsOverDue(User user) {
+        PaymentManager manager = new PaymentManager(this.mContext);
+        manager.doGetPaymentsOverDue(user, mUpdatePaymentsOverDueCallBack);
+    }
+
+    @Override
+    public void removePaymentsOverDue(ArrayList<Payment> payments) {
+        PaymentManager manager = new PaymentManager(this.mContext);
+        manager.doRemovePaymentsOverDue(payments, mRemovePaymentsOverDueCallBack);
     }
 
     @Override

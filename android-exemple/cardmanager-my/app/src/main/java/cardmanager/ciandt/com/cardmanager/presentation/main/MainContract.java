@@ -1,5 +1,8 @@
 package cardmanager.ciandt.com.cardmanager.presentation.main;
 
+import java.util.ArrayList;
+
+import cardmanager.ciandt.com.cardmanager.data.model.Payment;
 import cardmanager.ciandt.com.cardmanager.data.model.User;
 
 public interface MainContract {
@@ -17,6 +20,7 @@ public interface MainContract {
         void openPaymentsPending();
         void openAbout();
         void openHome();
+        void updateDialogNotificationForPaymentsOverDue(ArrayList<Payment> payments);
     }
 
     interface Presenter {
@@ -26,5 +30,7 @@ public interface MainContract {
         void openPaymentsPending();
         void openAbout();
         void openHome();
+        void startDialogNotificationForPaymentsOverDue(User user);
+        void removePaymentsOverDue(ArrayList<Payment> payments);
     }
 }

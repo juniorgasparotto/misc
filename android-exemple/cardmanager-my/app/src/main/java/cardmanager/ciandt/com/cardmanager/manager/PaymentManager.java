@@ -151,4 +151,88 @@ public class PaymentManager {
 
         task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
+
+    public void doGetPaymentsOverDue(final User user, final OperationListener<ArrayList<Payment>> listener) {
+        final PaymentBusiness business = new PaymentBusiness(mContext);
+
+        AsyncTask<Void, Integer, OperationResult<ArrayList<Payment>>> task = new AsyncTask<Void, Integer, OperationResult<ArrayList<Payment>>>() {
+            @Override
+            protected void onPreExecute() {
+                listener.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(OperationResult<ArrayList<Payment>> result) {
+                switch (result.type) {
+                    case SUCCESS:
+                        listener.onSuccess(result.result);
+                        break;
+                    case ERROR:
+                        listener.onError(result.error);
+                        break;
+                }
+
+                listener.onPostExecute();
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                listener.onProgressUpdate(values);
+            }
+
+            @Override
+            protected void onCancelled() {
+                listener.onCancel();
+            }
+
+            @Override
+            protected OperationResult<ArrayList<Payment>> doInBackground(Void... voids) {
+                return business.getPaymentsOverDue(user);
+            }
+        };
+
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    public void doRemovePaymentsOverDue(final ArrayList<Payment> payments, final OperationListener<Void> listener) {
+        final PaymentBusiness business = new PaymentBusiness(mContext);
+
+        AsyncTask<Void, Integer, OperationResult<Void>> task = new AsyncTask<Void, Integer, OperationResult<Void>>() {
+            @Override
+            protected void onPreExecute() {
+                listener.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(OperationResult<Void> result) {
+                switch (result.type) {
+                    case SUCCESS:
+                        listener.onSuccess(result.result);
+                        break;
+                    case ERROR:
+                        listener.onError(result.error);
+                        break;
+                }
+
+                listener.onPostExecute();
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                listener.onProgressUpdate(values);
+            }
+
+            @Override
+            protected void onCancelled() {
+                listener.onCancel();
+            }
+
+            @Override
+            protected OperationResult<Void> doInBackground(Void... voids) {
+                return business.removePaymentsOverDue(payments);
+            }
+        };
+
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
 }

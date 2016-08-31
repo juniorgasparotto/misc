@@ -53,7 +53,7 @@ public class PaymentsAdapter extends ArrayAdapter<Payment> {
 
         Payment payment = data.get(position);
         holder.txtName.setText(payment.name);
-        holder.txtDate.setText(Utils.formatDate(context, payment.date, R.string.schedule_format_date));
+        holder.txtDate.setText(Utils.formatDate(context, payment.date, R.string.schedule_format_date_and_time));
 
         if (removeListener != null) {
             holder.imgRemove.setOnClickListener(removeListener);

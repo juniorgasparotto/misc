@@ -9,6 +9,7 @@ import java.util.Date;
 public class Payment {
     public String name;
     public String id;
+    public String barCode;
     public Date date;
 
     @Override
@@ -18,6 +19,7 @@ public class Payment {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", date='" + date + '\'' +
+                ", barCode='" + barCode + '\'' +
             '}';
     }
 }

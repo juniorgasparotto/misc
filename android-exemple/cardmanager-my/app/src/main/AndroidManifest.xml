@@ -8,8 +8,12 @@
     <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- Permission to use camera - required -->
+    <!-- Permission to use camera cell restart -->
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permission to receive the cell restart -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- Camera features - recommended -->
     <uses-feature
@@ -72,6 +76,16 @@
             android:configChanges="keyboardHidden|orientation" />
         <activity android:name="io.card.payment.DataEntryActivity" />
 
+        <service android:enabled="true" android:name=".services.SchedulePaymentService" />
+
+        <receiver android:name=".presentation.payment.SchedulePaymentNotify" />
+        <receiver android:name=".startup.CardManagerStartUp">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

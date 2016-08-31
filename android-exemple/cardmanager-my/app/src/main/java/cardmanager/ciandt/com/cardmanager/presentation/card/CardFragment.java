@@ -2,6 +2,7 @@ package cardmanager.ciandt.com.cardmanager.presentation.card;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import cardmanager.ciandt.com.cardmanager.R;
 import cardmanager.ciandt.com.cardmanager.data.model.Card;
 import cardmanager.ciandt.com.cardmanager.data.model.User;
 import cardmanager.ciandt.com.cardmanager.infrastructure.Utils;
+import cardmanager.ciandt.com.cardmanager.presentation.main.MainActivity;
 
 public class CardFragment extends Fragment implements CardContract.View {
     private CardContract.Presenter mPresenter;
@@ -86,4 +88,23 @@ public class CardFragment extends Fragment implements CardContract.View {
     public void showDefaultDialogError(String message) {
         Utils.showDefaultDialogError(this.getContext(), message);
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MainActivity.isVisible = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        MainActivity.isVisible = false;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MainActivity.isVisible = false;
+    }
+
 }

@@ -59,7 +59,16 @@
     <string name="schedule_txt_account_code_barres_text">código de barras</string>
     <string name="schedule_btn_open_cam_text">Ler código pela câmera</string>
     <string name="schedule_btn_schedule_text">Agendar</string>
-    <string name="schedule_format_date">dd/MM/yyyy - HH:mm</string>
+    <string name="schedule_format_date_and_time">dd/MM/yyyy - HH:mm</string>
     <string name="title_activity_schedule_payment">agendar pagamento</string>
+    <string name="schedule_payment_error_account_name_empty">O campo nome da conta não pode ser vazio</string>
+    <string name="schedule_payment_error_account_name_invalid">O campo nome da conta está inválido</string>
+    <string name="schedule_payment_error_date_empty">O campo data de vencimento não pode ser vazio</string>
+    <string name="schedule_payment_error_date_invalid">O campo data de vencimento esta inválido</string>
+    <string name="schedule_payment_error_bar_code_empty">O campo código de barras não pode ser vazio</string>
+    <string name="schedule_payment_error_bar_code_invalid">O campo código de barras está inválido</string>
+    <string name="schedule_payment_notification_message">Existem vencimentos para hoje</string>
+    <string name="schedule_payment_dialog_over_due_more_one_title">As seguintes contas vencem hoje! Realize os pagamentos!</string>
+    <string name="schedule_payment_dialog_over_due_title">%s vence hoje! Realize o pagamento!</string>
 
 </resources>

@@ -1,5 +1,12 @@
 package cardmanager.ciandt.com.cardmanager.presentation.main;
 
+
+import android.annotation.TargetApi;
+import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -8,14 +15,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 import cardmanager.ciandt.com.cardmanager.R;
+import cardmanager.ciandt.com.cardmanager.data.model.Payment;
 import cardmanager.ciandt.com.cardmanager.data.model.User;
 import cardmanager.ciandt.com.cardmanager.infrastructure.Utils;
 import cardmanager.ciandt.com.cardmanager.presentation.about.AboutFragment;
@@ -23,6 +37,7 @@ import cardmanager.ciandt.com.cardmanager.presentation.card.CardFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.extracts.ExtractsFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.mycards.MyCardsFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.payment.PaymentsFragment;
+import cardmanager.ciandt.com.cardmanager.presentation.payment.SchedulePaymentNotify;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
@@ -35,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private User mUserLogged;
     private LinearLayout mMenuHeader;
     private ActionBar mActionBar;
+    private AlertDialog mDialogPaymentsOverDue;
 
     private Fragment mCurrentFragment;
 
@@ -43,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private static final String TAG_PAYMENT_SCHEDULE_FRAGMENT = "PAYMENT_SCHEDULE";
     private static final String TAG_ABOUT_FRAGMENT = "ABOUT";
     private static final String TAG_HOME = "CARD";
+    public static final String NOTIFICATION_REQUEST_CODE_OPEN_PAY_PENDING = "0";
+
+    public static boolean isVisible = false;
+    public static MainActivity current;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         }
 
         // bindings
-
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -81,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         // start app configurations
         mPresenter.configureAppToUser();
+        MainActivity.current = this;
     }
 
     @Override
@@ -96,6 +116,81 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         this.mUserLogged = user;
         configureMenu();
         homeOrMantainLastFragment(false);
+        openPaymentsPendingDialogIfNofificationClick();
+    }
+
+    public void startDialogNotificationForPaymentsOverDue() {
+        mPresenter.startDialogNotificationForPaymentsOverDue(null);
+    }
+
+    @Override
+    public void updateDialogNotificationForPaymentsOverDue(final ArrayList<Payment> payments) {
+        if (mDialogPaymentsOverDue != null)
+            mDialogPaymentsOverDue.dismiss();
+
+        if (payments.size() == 1) {
+            if (DateUtils.isToday(payments.get(0).date.getTime())) {
+                String message = this.getString(R.string.schedule_payment_dialog_over_due_title);
+                message = String.format(message, payments.get(0).name);
+
+                AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+                builderSingle.setMessage(message);
+
+                //dlgAlert.setPositiveButton(R.string.ok_label, null);
+
+                builderSingle.setCancelable(false);
+
+                builderSingle.setPositiveButton(
+                        R.string.ok_label,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mPresenter.removePaymentsOverDue(payments);
+                                dialog.dismiss();
+                            }
+                        });
+
+                this.mDialogPaymentsOverDue = builderSingle.create();
+                this.mDialogPaymentsOverDue.show();
+            }
+        }
+        else if (payments.size() > 1) {
+            final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+            boolean hasItem = false;
+            for (Payment payment : payments) {
+                if (DateUtils.isToday(payment.date.getTime())) {
+                    arrayAdapter.add(payment.name);
+                    hasItem = true;
+                }
+            }
+
+            if (hasItem) {
+                AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+                builderSingle.setTitle(R.string.schedule_payment_dialog_over_due_more_one_title);
+                builderSingle.setCancelable(false);
+                builderSingle.setPositiveButton(
+                        R.string.ok_label,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mPresenter.removePaymentsOverDue(payments);
+                                dialog.dismiss();
+                            }
+                        });
+
+                builderSingle.setAdapter(arrayAdapter, null);
+                this.mDialogPaymentsOverDue = builderSingle.show();
+            }
+        }
+    }
+
+    private void openPaymentsPendingDialogIfNofificationClick() {
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null && bundle.containsKey(NOTIFICATION_REQUEST_CODE_OPEN_PAY_PENDING))
+        {
+            this.startDialogNotificationForPaymentsOverDue();
+        }
     }
 
     private void configureMenu() {

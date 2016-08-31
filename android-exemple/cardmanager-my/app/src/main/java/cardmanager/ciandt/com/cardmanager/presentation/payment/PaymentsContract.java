@@ -17,7 +17,7 @@ public interface PaymentsContract {
         void setPayments(ArrayList<Payment> paymentsSchedule);
         void openAddPayment();
         void removePayment(Payment payment);
-        void refresh(Payment payments);
+        void load();
     }
 
     interface Presenter {

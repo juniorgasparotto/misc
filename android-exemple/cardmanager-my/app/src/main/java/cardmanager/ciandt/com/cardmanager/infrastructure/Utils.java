@@ -1,12 +1,17 @@
 package cardmanager.ciandt.com.cardmanager.infrastructure;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
@@ -14,15 +19,17 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import cardmanager.ciandt.com.cardmanager.R;
-import cardmanager.ciandt.com.cardmanager.data.repository.sharedpreferences.SharedPreferencesRepository;
 import cardmanager.ciandt.com.cardmanager.data.repository.webapi.WebApiRepository;
+import cardmanager.ciandt.com.cardmanager.presentation.main.MainActivity;
+import cardmanager.ciandt.com.cardmanager.presentation.payment.SchedulePaymentNotify;
 
 /**
  * Created by root on 12/08/16.
@@ -155,4 +162,63 @@ public final class Utils {
         SimpleDateFormat dt1 = new SimpleDateFormat(context.getString(formatResId));
         return dt1.format(date);
     }
+
+    public static Date tryParseDate(Context context, String date, int formatResId) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(context.getString(formatResId));
+        Date myDate = null;
+        try {
+            myDate = dateFormat.parse(date);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return myDate;
+    }
+//
+//    public static final void notify(Context context, String extraKey, String extraValue, String notificationTitle, String notificationMessage) {
+//        Intent resultIntent = new Intent(context, MainActivity.class);
+//        resultIntent.putExtra(extraKey, extraValue);
+//        //resultIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//        // Sets the Activity to start in a new, empty task
+//        resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//
+//        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+//        stackBuilder.addParentStack(MainActivity.class);
+//        stackBuilder.addNextIntent(resultIntent);
+//
+//        PendingIntent resultPendingIntent =
+//                stackBuilder.getPendingIntent(
+//                        0,
+//                        PendingIntent.FLAG_UPDATE_CURRENT
+//                );
+//        NotificationCompat.Builder mBuilder =
+//                new NotificationCompat.Builder(context)
+//                        .setSmallIcon(R.drawable.ic_menu)
+//                        .setContentTitle(notificationTitle)
+//                        .setContentText(notificationMessage);
+//        mBuilder.setContentIntent(resultPendingIntent);
+//        mBuilder.setAutoCancel(true);
+//        NotificationManager mNotificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+//        mNotificationManager.notify(1, mBuilder.build());
+//    }
+//
+//    public static final void setAlarm(Context context)
+//    {
+//        AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+//        Intent intent = new Intent(context, SchedulePaymentNotify.class);
+//        PendingIntent alarmIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//        // Set the alarm to start at 8:30 a.m.
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTimeInMillis(System.currentTimeMillis());
+//        calendar.set(Calendar.HOUR_OF_DAY, 11);
+//        calendar.set(Calendar.MINUTE, 24);
+//
+//        // setRepeating() lets you specify a precise custom interval--in this case,
+//        // 20 minutes.
+//        //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 20000, alarmIntent);
+//        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 3000, 2000, alarmIntent);
+//    }
 }

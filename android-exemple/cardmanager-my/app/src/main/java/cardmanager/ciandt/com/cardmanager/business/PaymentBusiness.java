@@ -32,99 +32,8 @@ public class PaymentBusiness {
         OperationResult<ArrayList<Payment>> result = new OperationResult<>();
 
         try {
-            if (user == null) {
-                result.type = OperationResult.ResultType.ERROR;
-                result.error = new OperationError();
-                result.error.code = OperationError.ERROR_CODE_SERVER_WITH_MESSAGE;
-                result.error.message = "Not logged";
-            } else {
-                result.result = this.mSharedPreferencesRepository.getList(STORE_KEY_PAYMENTS, Payment[].class);
-
-                result.result = new ArrayList<>();
-                Payment payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-                payment = new Payment();
-                payment.date = new Date();
-                payment.name = "Junior";
-                payment.id = java.util.UUID.randomUUID().toString();
-                result.result.add(payment);
-
-
-
-
-
-                result.type = OperationResult.ResultType.SUCCESS;
-            }
+            result.result = this.mSharedPreferencesRepository.getList(STORE_KEY_PAYMENTS, Payment[].class);
+            result.type = OperationResult.ResultType.SUCCESS;
         }
         catch (Exception ex)
         {
@@ -141,24 +50,17 @@ public class PaymentBusiness {
         OperationResult<Payment> result = new OperationResult<>();
 
         try {
-            if (user == null) {
-                result.type = OperationResult.ResultType.ERROR;
-                result.error = new OperationError();
-                result.error.code = OperationError.ERROR_CODE_SERVER_WITH_MESSAGE;
-                result.error.message = "Not logged";
-            } else {
-                ArrayList<Payment> payments = this.mSharedPreferencesRepository.getList(STORE_KEY_PAYMENTS, Payment[].class);
+            ArrayList<Payment> payments = this.mSharedPreferencesRepository.getList(STORE_KEY_PAYMENTS, Payment[].class);
 
-                if (payments != null) {
-                    for (Payment item : payments)
-                        if (item.id.equals(payment.id))
-                            payments.remove(item);
-                }
-
-                this.mSharedPreferencesRepository.insertOrUpdate(STORE_KEY_PAYMENTS, payments);
-                result.type = OperationResult.ResultType.SUCCESS;
-                result.result = payment;
+            if (payments != null) {
+                for (Payment item : new ArrayList<Payment>(payments))
+                    if (item.id.equals(payment.id))
+                        payments.remove(item);
             }
+
+            this.mSharedPreferencesRepository.insertOrUpdate(STORE_KEY_PAYMENTS, payments);
+            result.type = OperationResult.ResultType.SUCCESS;
+            result.result = payment;
         }
         catch (Exception ex)
         {
@@ -183,6 +85,9 @@ public class PaymentBusiness {
             } else {
                 ArrayList<Payment> payments = this.mSharedPreferencesRepository.getList(STORE_KEY_PAYMENTS, Payment[].class);
 
+                if (payment.id == null)
+                    payment.id = java.util.UUID.randomUUID().toString();
+
                 if (payments == null)
                     payments = new ArrayList<Payment>();
 
@@ -201,6 +106,25 @@ public class PaymentBusiness {
             result.type = OperationResult.ResultType.ERROR;
         }
 
+        return result;
+    }
+
+    public OperationResult<ArrayList<Payment>> getPaymentsOverDue(User user) {
+        OperationResult<ArrayList<Payment>> result = this.getPayments(user);
+        if (result != null && result.result != null)
+        {
+            for (Payment payment : new ArrayList<Payment>(result.result))
+                if (payment.date.getTime() >= System.currentTimeMillis())
+                    result.result.remove(payment);
+        }
+        return result;
+    }
+
+    public OperationResult<Void> removePaymentsOverDue(ArrayList<Payment> payments) {
+        OperationResult<Void> result = new OperationResult<>();
+        result.type = OperationResult.ResultType.SUCCESS;
+        for(Payment payment : payments)
+            this.removePayment(null, payment);
         return result;
     }
 }
