@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateUtils;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -55,6 +56,38 @@ public class CardManagerStartUp extends BroadcastReceiver {
 
         }
     };
+
+    private final OperationListener<Void> mRemovePaymentsOverDueCallBack = new OperationListener<Void>() {
+
+        @Override
+        public void onPreExecute() {
+
+        }
+
+        @Override
+        public void onSuccess(Void payments) {
+
+        }
+
+        @Override
+        public void onError(OperationError error) {
+            if (error.code == OperationError.ERROR_CODE_SERVER_WITH_MESSAGE) {
+
+            } else {
+
+            }
+        }
+
+        @Override
+        public void onCancel() {
+
+        }
+
+        @Override
+        public void onPostExecute() {
+
+        }
+    };
     
     public void onReceive(Context context, Intent intent) {
         this.mContext = context;
@@ -65,8 +98,19 @@ public class CardManagerStartUp extends BroadcastReceiver {
     }
 
     public void setPayments(ArrayList<Payment> payments) {
+        ArrayList<Payment> removes = new ArrayList<>();
+
         for (Payment payment : payments) {
-            SchedulePaymentNotify.setAlarm(this.mContext, payment.date.getTime());
+            if (payment.date.getTime() > System.currentTimeMillis()) {
+                SchedulePaymentNotify.setAlarm(this.mContext, payment.date.getTime());
+            } else {
+                removes.add(payment);
+            }
+        }
+
+        if (removes.size() > 0) {
+            PaymentManager manager = new PaymentManager(this.mContext);
+            manager.doRemovePaymentsOverDue(removes, mRemovePaymentsOverDueCallBack);
         }
     }
 }

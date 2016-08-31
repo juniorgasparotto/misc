@@ -76,10 +76,12 @@ public class SchedulePaymentNotify extends BroadcastReceiver {
 
     public static final void setAlarm(Context context, long triggerAtMillis)
     {
-        AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(context, SchedulePaymentNotify.class);
-        PendingIntent alarmIntent = PendingIntent.getBroadcast(context, ALARM_ID++, intent, 0);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAtMillis, alarmIntent);
+        if (triggerAtMillis >= System.currentTimeMillis()) {
+            AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+            Intent intent = new Intent(context, SchedulePaymentNotify.class);
+            PendingIntent alarmIntent = PendingIntent.getBroadcast(context, ALARM_ID++, intent, 0);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAtMillis, alarmIntent);
+        }
     }
 
     // **** Não funciona ****
