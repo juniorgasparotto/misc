@@ -93,6 +93,7 @@ public class CardFragment extends Fragment implements CardContract.View {
     public void onResume() {
         super.onResume();
         MainActivity.isVisible = true;
+        MainActivity.current.startDialogNotificationForPaymentsOverDue();
     }
 
     @Override

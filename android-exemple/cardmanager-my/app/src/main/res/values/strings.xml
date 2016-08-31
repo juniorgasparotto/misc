@@ -70,5 +70,6 @@
     <string name="schedule_payment_notification_message">Existem vencimentos para hoje</string>
     <string name="schedule_payment_dialog_over_due_more_one_title">As seguintes contas vencem hoje! Realize os pagamentos!</string>
     <string name="schedule_payment_dialog_over_due_title">%s vence hoje! Realize o pagamento!</string>
+    <string name="menu_logout_text">Logout</string>
 
 </resources>

@@ -35,6 +35,7 @@ import cardmanager.ciandt.com.cardmanager.infrastructure.Utils;
 import cardmanager.ciandt.com.cardmanager.presentation.about.AboutFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.card.CardFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.extracts.ExtractsFragment;
+import cardmanager.ciandt.com.cardmanager.presentation.login.LoginActivity;
 import cardmanager.ciandt.com.cardmanager.presentation.mycards.MyCardsFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.payment.PaymentsFragment;
 import cardmanager.ciandt.com.cardmanager.presentation.payment.SchedulePaymentNotify;
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         this.mUserLogged = user;
         configureMenu();
         homeOrMantainLastFragment(false);
-        openPaymentsPendingDialogIfNofificationClick();
+        //openPaymentsPendingDialogIfNofificationClick();
     }
 
     public void startDialogNotificationForPaymentsOverDue() {
@@ -184,14 +185,21 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         }
     }
 
-    private void openPaymentsPendingDialogIfNofificationClick() {
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        if (bundle != null && bundle.containsKey(NOTIFICATION_REQUEST_CODE_OPEN_PAY_PENDING))
-        {
-            this.startDialogNotificationForPaymentsOverDue();
-        }
+    @Override
+    public void logout() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
+
+//    private void openPaymentsPendingDialogIfNofificationClick() {
+//        Intent intent = getIntent();
+//        Bundle bundle = intent.getExtras();
+//        if (bundle != null && bundle.containsKey(NOTIFICATION_REQUEST_CODE_OPEN_PAY_PENDING))
+//        {
+//            this.startDialogNotificationForPaymentsOverDue();
+//        }
+//    }
 
     private void configureMenu() {
         Glide.with(this).load(Utils.buildImagesUriRepository(this, this.mUserLogged.profileImagePath)).into(mMenuImageProfile);
@@ -218,6 +226,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
                     case R.id.menu_about:
                         mPresenter.openAbout();
+                        break;
+                    case R.id.menu_logout:
+                        mPresenter.logout();
                         break;
                 }
                 return true;

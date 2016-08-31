@@ -56,7 +56,7 @@ public class UserBusiness {
             if (result.result == null) {
                 result.type = OperationResult.ResultType.ERROR;
                 result.error = new OperationError();
-                result.error.code = OperationError.ERROR_CODE_SERVER_WITH_MESSAGE;
+                result.error.code = OperationError.ERROR_NOT_AUTHORIZED;
                 result.error.message = "Not logged";
             } else {
                 result.type = OperationResult.ResultType.SUCCESS;
@@ -120,6 +120,24 @@ public class UserBusiness {
         try {
             result.type = OperationResult.ResultType.SUCCESS;
             result.result = user.cards;
+        }
+        catch (Exception ex)
+        {
+            result.error = new OperationError();
+            result.error.code = OperationError.ERROR_CODE_UNKNOWN;
+            result.error.message = ex.toString();
+            result.type = OperationResult.ResultType.ERROR;
+        }
+
+        return result;
+    }
+
+    public OperationResult<Void> logout() {
+        OperationResult<Void> result = new OperationResult<Void>();
+
+        try {
+            this.mSharedPreferencesRepository.delete(STORE_KEY_LOGGED);
+            result.type = OperationResult.ResultType.SUCCESS;
         }
         catch (Exception ex)
         {

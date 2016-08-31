@@ -19,5 +19,10 @@
             android:icon="@drawable/ico_sobre"
             android:title="@string/menu_about_text"
         />
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ico_trash"
+            android:title="@string/menu_logout_text"
+            />
     </group>
 </menu>

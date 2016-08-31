@@ -11,6 +11,7 @@ import cardmanager.ciandt.com.cardmanager.data.model.Payment;
 import cardmanager.ciandt.com.cardmanager.data.model.User;
 import cardmanager.ciandt.com.cardmanager.infrastructure.OperationError;
 import cardmanager.ciandt.com.cardmanager.infrastructure.OperationListener;
+import cardmanager.ciandt.com.cardmanager.infrastructure.OperationResult;
 import cardmanager.ciandt.com.cardmanager.infrastructure.Utils;
 import cardmanager.ciandt.com.cardmanager.manager.PaymentManager;
 import cardmanager.ciandt.com.cardmanager.manager.UserManager;
@@ -33,7 +34,11 @@ public class MainPresenter implements MainContract.Presenter {
 
         @Override
         public void onError(OperationError error) {
-            if (error.code == OperationError.ERROR_CODE_SERVER_WITH_MESSAGE) {
+            if (error.code == OperationError.ERROR_NOT_AUTHORIZED)
+            {
+                mView.logout();
+            }
+            else if (error.code == OperationError.ERROR_CODE_SERVER_WITH_MESSAGE) {
                 mView.showDialogError(error.message);
             } else {
                 mView.showDefaultDialogError(error.message);
@@ -115,6 +120,38 @@ public class MainPresenter implements MainContract.Presenter {
         }
     };
 
+    private final OperationListener<Void> mLogoutCallBack = new OperationListener<Void>() {
+
+        @Override
+        public void onPreExecute() {
+            mView.showLoading();
+        }
+
+        @Override
+        public void onSuccess(Void payments) {
+            mView.logout();
+        }
+
+        @Override
+        public void onError(OperationError error) {
+            if (error.code == OperationError.ERROR_CODE_SERVER_WITH_MESSAGE) {
+                mView.showDialogError(error.message);
+            } else {
+                mView.showDefaultDialogError(error.message);
+            }
+        }
+
+        @Override
+        public void onCancel() {
+            mView.hideLoading();
+        }
+
+        @Override
+        public void onPostExecute() {
+            mView.hideLoading();
+        }
+    };
+
     public MainPresenter(Context context, MainContract.View view)
     {
         this.mContext = context;
@@ -143,6 +180,12 @@ public class MainPresenter implements MainContract.Presenter {
     public void removePaymentsOverDue(ArrayList<Payment> payments) {
         PaymentManager manager = new PaymentManager(this.mContext);
         manager.doRemovePaymentsOverDue(payments, mRemovePaymentsOverDueCallBack);
+    }
+
+    @Override
+    public void logout() {
+        UserManager manager = new UserManager(this.mContext, Utils.getWebApiRepository(this.mContext));
+        manager.doLogout(mLogoutCallBack);
     }
 
     @Override

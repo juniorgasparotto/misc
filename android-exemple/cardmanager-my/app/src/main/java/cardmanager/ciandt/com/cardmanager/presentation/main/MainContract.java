@@ -21,6 +21,7 @@ public interface MainContract {
         void openAbout();
         void openHome();
         void updateDialogNotificationForPaymentsOverDue(ArrayList<Payment> payments);
+        void logout();
     }
 
     interface Presenter {
@@ -32,5 +33,6 @@ public interface MainContract {
         void openHome();
         void startDialogNotificationForPaymentsOverDue(User user);
         void removePaymentsOverDue(ArrayList<Payment> payments);
+        void logout();
     }
 }

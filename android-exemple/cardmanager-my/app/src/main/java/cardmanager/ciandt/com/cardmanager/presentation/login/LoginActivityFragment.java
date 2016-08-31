@@ -103,6 +103,7 @@ public class LoginActivityFragment extends Fragment implements LoginContract.Vie
     public void openMainActivity() {
         Intent intent = new Intent(getContext(), MainActivity.class);
         startActivity(intent);
+        getActivity().finish();
     }
 
     @Override

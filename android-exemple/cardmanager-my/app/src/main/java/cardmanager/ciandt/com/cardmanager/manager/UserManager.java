@@ -283,4 +283,46 @@ public class UserManager {
 
         task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
+
+    public void doLogout(final OperationListener<Void> listener) {
+        final UserBusiness business = new UserBusiness(this.mContext, this.mWebApiRepository);
+
+        AsyncTask<Void, Integer, OperationResult<Void>> task = new AsyncTask<Void, Integer, OperationResult<Void>>() {
+            @Override
+            protected void onPreExecute() {
+                listener.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(OperationResult<Void> result) {
+                switch (result.type) {
+                    case SUCCESS:
+                        listener.onSuccess(result.result);
+                        break;
+                    case ERROR:
+                        listener.onError(result.error);
+                        break;
+                }
+
+                listener.onPostExecute();
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                listener.onProgressUpdate(values);
+            }
+
+            @Override
+            protected void onCancelled() {
+                listener.onCancel();
+            }
+
+            @Override
+            protected OperationResult<Void> doInBackground(Void... voids) {
+                return business.logout();
+            }
+        };
+
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
 }
