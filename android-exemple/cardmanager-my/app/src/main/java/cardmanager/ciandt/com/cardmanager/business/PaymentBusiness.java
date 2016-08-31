@@ -120,7 +120,7 @@ public class PaymentBusiness {
         return result;
     }
 
-    public OperationResult<Void> removePaymentsOverDue(ArrayList<Payment> payments) {
+    public OperationResult<Void> removePayments(ArrayList<Payment> payments) {
         OperationResult<Void> result = new OperationResult<>();
         result.type = OperationResult.ResultType.SUCCESS;
         for(Payment payment : payments)

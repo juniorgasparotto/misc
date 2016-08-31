@@ -76,13 +76,13 @@ public class ExtractsFragment extends Fragment implements ExtractsContract.View 
             }
 
             drawable.setColor(colorId);
-            card.purchases.add(card.purchases.get(0));
-            card.purchases.add(card.purchases.get(0));
-            card.purchases.add(card.purchases.get(0));
-            card.purchases.add(card.purchases.get(0));
-            card.purchases.add(card.purchases.get(0));
-            card.purchases.add(card.purchases.get(0));
-            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
+//            card.purchases.add(card.purchases.get(0));
             PurchaseAdapter adapter = new PurchaseAdapter(this.getContext(), R.layout.fragment_extracts_item, card.purchases);
             mListExtracts.setAdapter(adapter);
         }

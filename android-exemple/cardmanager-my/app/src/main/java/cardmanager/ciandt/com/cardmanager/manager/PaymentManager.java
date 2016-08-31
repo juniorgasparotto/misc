@@ -229,7 +229,7 @@ public class PaymentManager {
 
             @Override
             protected OperationResult<Void> doInBackground(Void... voids) {
-                return business.removePaymentsOverDue(payments);
+                return business.removePayments(payments);
             }
         };
 

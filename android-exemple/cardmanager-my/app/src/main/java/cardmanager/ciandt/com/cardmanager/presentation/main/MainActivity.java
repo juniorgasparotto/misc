@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.zxing.integration.android.IntentIntegrator;
 
 import java.util.ArrayList;
 
@@ -92,10 +93,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         mActionBar = getSupportActionBar();
 
-        // configure icon menu
-        //mActionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
-        //mActionBar.setDisplayHomeAsUpEnabled(true);
-
         // create presenter
         new MainPresenter(this, this);
 
@@ -117,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         this.mUserLogged = user;
         configureMenu();
         homeOrMantainLastFragment(false);
-        //openPaymentsPendingDialogIfNofificationClick();
     }
 
     public void startDialogNotificationForPaymentsOverDue() {
@@ -126,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void updateDialogNotificationForPaymentsOverDue(final ArrayList<Payment> payments) {
+        // cancel notification
+        SchedulePaymentNotify.cancelNotification(this);
+
         if (mDialogPaymentsOverDue != null)
             mDialogPaymentsOverDue.dismiss();
 

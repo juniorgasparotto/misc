@@ -14,7 +14,7 @@ import cardmanager.ciandt.com.cardmanager.R;
 import cardmanager.ciandt.com.cardmanager.presentation.main.MainActivity;
 
 public class SchedulePaymentNotify extends BroadcastReceiver {
-    private final int NOTIFICATION_ID = 1;
+    private static final int NOTIFICATION_ID = 1;
     private static int ALARM_ID;
 
     public void onReceive(Context context, Intent intent) {
@@ -90,6 +90,12 @@ public class SchedulePaymentNotify extends BroadcastReceiver {
         intent.putExtra(MainActivity.NOTIFICATION_REQUEST_CODE_OPEN_PAY_PENDING, "");
         PendingIntent test = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_NO_CREATE);
         return test != null;
+    }
+
+    public static void cancelNotification(Context ctx) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancel(NOTIFICATION_ID);
     }
 
 }

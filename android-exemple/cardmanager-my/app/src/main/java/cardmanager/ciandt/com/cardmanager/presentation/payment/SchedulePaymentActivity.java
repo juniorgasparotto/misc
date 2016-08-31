@@ -2,6 +2,7 @@ package cardmanager.ciandt.com.cardmanager.presentation.payment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -49,7 +54,7 @@ public class SchedulePaymentActivity extends AppCompatActivity implements Schedu
         configureButtons();
         addListenersToEnableRegisterButtonIfValid();
         createValidationsOnLostFocus();
-        setDateTimeField();
+        configureDateTimePicker();
 
         mPresenter.loadLoggedUser();
     }
@@ -65,13 +70,9 @@ public class SchedulePaymentActivity extends AppCompatActivity implements Schedu
         mTxtBarCode = (EditText) this.findViewById(R.id.schedule_txt_account_code_barres);
         mBtnSchedule = (Button) this.findViewById(R.id.schedule_btn_schedule);
         mBtnOpenCam = (Button) this.findViewById(R.id.schedule_btn_open_cam);
-
-        //mTxtAccountName.setText("ba");
-        //mTxtDueDate.setText("12/12/1999 - 00:00");
-        //mTxtBarCode.setText("1232");
     }
 
-    private void setDateTimeField() {
+    private void configureDateTimePicker() {
         Calendar newCalendar = Calendar.getInstance();
         final Calendar newDate = Calendar.getInstance();
 
@@ -273,11 +274,21 @@ public class SchedulePaymentActivity extends AppCompatActivity implements Schedu
 
     @Override
     public void openCamera() {
-
+        new IntentIntegrator(this).initiateScan();
     }
 
     @Override
     public void systemSchedule(long time) {
         SchedulePaymentNotify.setAlarm(this, time);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (scanResult != null) {
+            mTxtBarCode.setText(scanResult.getContents());
+        }
     }
 }
