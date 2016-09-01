@@ -38,8 +38,8 @@ public class LoginActivityFragment extends Fragment implements LoginContract.Vie
         mBtnLogin = (Button)root.findViewById(R.id.btn_login);
         mBtnNewRegister = (Button)root.findViewById(R.id.btn_new_register);
 
-//        mTxtLoginName.setText("wp@gmail.com");
-//        mTxtLoginPwd.setText("123456");
+        mTxtLoginName.setText("wp@gmail.com");
+        mTxtLoginPwd.setText("123456");
 
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
