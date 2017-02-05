@@ -1,0 +1,48 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@drawable/rounded_corner"
+    >
+
+        <ImageView
+            android:src="@drawable/ico_agendar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="18dp"
+        />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="68dp"
+        >
+
+            <TextView
+                android:id="@+id/schedule_txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="conta de luz"
+            />
+
+            <TextView
+                android:id="@+id/schedule_txt_date"
+                android:text="10/06/2016 - 10:45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/schedule_btn_remove"
+            android:src="@drawable/ico_trash"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="18dp"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>

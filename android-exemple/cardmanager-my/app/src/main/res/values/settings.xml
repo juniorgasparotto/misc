@@ -1,0 +1,4 @@
+<resources>
+    <string name="settings_webapi_url" translatable="false">http://cardmanagerserver.herokuapp.com/</string>
+    <string name="settings_images_uri_repository" translatable="false">http://cardmanagerserver.herokuapp.com/</string>
+</resources>
