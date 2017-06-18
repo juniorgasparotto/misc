@@ -1,0 +1,12 @@
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\ConsoleSample.deps.json
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\ConsoleSample.runtimeconfig.json
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\ConsoleSample.runtimeconfig.dev.json
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\obj\Debug\netcoreapp2.0\ConsoleSample.csproj.CoreCompileInputs.cache
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\obj\Debug\netcoreapp2.0\ConsoleSample.AssemblyInfo.cs
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\x86\e_sqlite3.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\x64\e_sqlite3.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\ConsoleSample.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\bin\Debug\netcoreapp2.0\ConsoleSample.pdb
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\obj\Debug\netcoreapp2.0\ConsoleSample.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\obj\Debug\netcoreapp2.0\ConsoleSample.pdb
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\ConsoleSample\obj\Debug\netcoreapp2.0\ConsoleSample.csprojResolveAssemblyReference.cache
