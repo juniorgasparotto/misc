@@ -2,16 +2,23 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "isShellCommand": true,
     "showOutput": "always",
     "echoCommand": true,
     "tasks": [{
-        "taskName": "build",
-        "command": "cmd",
-        "args": ["/C dotnet restore & dotnet build"],
-        // "args": ["/C dotnet ef database update & dotnet restore & dotnet build"],
-        "suppressTaskName": true,
-        "showOutput": "always",
-        "echoCommand": true
-    }]
+            "taskName": "cmd-build",
+            "command": "cmd",
+            "args": ["/C dotnet restore & dotnet build"],
+            "suppressTaskName": true,
+            "showOutput": "always",
+            "echoCommand": true
+        },
+        {
+            "taskName": "cmd-dbupdate-and-build",
+            "command": "cmd",
+            "args": ["/C", "migration.bat"],
+            "suppressTaskName": true,
+            "showOutput": "always",
+            "echoCommand": true
+        }
+    ]
 }

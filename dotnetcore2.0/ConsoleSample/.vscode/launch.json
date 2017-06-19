@@ -1,10 +1,21 @@
 {
     "version": "0.2.0",
     "configurations": [{
-            "name": "Run console",
+            "name": "Run console (CMD)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "cmd-build",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Run console with dbupdate (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-dbupdate-and-build",
             "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
             "args": [],
             "cwd": "${workspaceRoot}",

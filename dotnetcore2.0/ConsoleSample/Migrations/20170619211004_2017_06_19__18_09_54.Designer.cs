@@ -9,8 +9,8 @@ using System;
 namespace ConsoleSample.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20170618235516_a")]
-    partial class a
+    [Migration("20170619211004_2017_06_19__18_09_54")]
+    partial class _2017_06_19__18_09_54
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

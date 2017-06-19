@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ConsoleSample.Migrations
 {
-    public partial class a : Migration
+    public partial class _2017_06_19__18_08_58 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace ConsoleSample.Migrations
                 {
                     BlogId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Url2 = table.Column<string>(nullable: true)
+                    Url = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

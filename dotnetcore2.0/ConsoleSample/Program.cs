@@ -17,8 +17,6 @@ namespace ConsoleSample
         {
             using (var context = new BloggingContext())
             {
-                context.Database.EnsureCreated();
-
                 var all = context.Posts.ToArrayAsync();
                 var post = new Post {
                     Blog = new Blog() {
