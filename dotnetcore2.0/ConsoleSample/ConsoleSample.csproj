@@ -20,20 +20,7 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0-preview1-final" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <BuildDependsOn>
-      MyCustomTarget1;
-      $(BuildDependsOn);
-      MyCustomTarget2
-    </BuildDependsOn>
-  </PropertyGroup>
-
-  <Target Name="MyCustomTarget1">
-    <Message Text="Running MyCustomTarget1..." />
-  </Target>
-  <Target Name="MyCustomTarget2">
-    <Message Text="Running MyCustomTarget2..." />
-  </Target>
-
-
+  <!--<Target Name="BuildMigration" AfterTargets="Build">
+    <Exec Command="migration.bat"  Condition="!Exists('.\migrating')"/>
+  </Target>-->
 </Project>

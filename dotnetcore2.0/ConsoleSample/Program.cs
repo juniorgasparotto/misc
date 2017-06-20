@@ -29,7 +29,6 @@ namespace ConsoleSample
             }
         }
     }
-
     public class BloggingContext : DbContext
     {
         public DbSet<Blog> Blogs { get; set; }
