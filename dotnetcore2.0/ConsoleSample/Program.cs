@@ -20,12 +20,12 @@ namespace ConsoleSample
                 var all = context.Posts.ToArrayAsync();
                 var post = new Post {
                     Blog = new Blog() {
-                        Url2 = "teste"
+                        Url = "teste"
                     },
                 };
 
                 context.Add(post);
-                context.SaveChanges();
+                context.SaveChangesAsync();
             }
         }
     }
@@ -45,14 +45,15 @@ namespace ConsoleSample
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"DataSource=.\\data.db");
+            // optionsBuilder.UseSqlite(@"DataSource=.\\data.db");
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ConsoleSample;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
     }
 
     public class Blog
     {
         public int BlogId { get; set; }
-        public string Url2 { get; set; }
+        public string Url { get; set; }
 
         public List<Post> Posts { get; set; }
     }
