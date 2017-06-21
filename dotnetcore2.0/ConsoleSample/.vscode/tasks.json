@@ -7,15 +7,30 @@
     "tasks": [{
             "taskName": "cmd-build",
             "command": "cmd",
+            "args": ["/C dotnet build"],
+            "suppressTaskName": true,
+            "showOutput": "always",
+            "echoCommand": true
+        }, {
+            "taskName": "cmd-restore-build",
+            "command": "cmd",
             "args": ["/C dotnet restore & dotnet build"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
         },
         {
-            "taskName": "cmd-dbupdate-and-build",
+            "taskName": "cmd-restore-dbupdate",
             "command": "cmd",
-            "args": ["/C", "migration.bat"],
+            "args": ["/C", "dotnet restore & scripts\\dbupdate.bat"],
+            "suppressTaskName": true,
+            "showOutput": "always",
+            "echoCommand": true
+        },
+        {
+            "taskName": "cmd-dbupdate",
+            "command": "cmd",
+            "args": ["/C", "scripts\\dbupdate.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true

@@ -1,7 +1,40 @@
 {
     "version": "0.2.0",
     "configurations": [{
-            "name": "Run console (CMD)",
+            "name": "Run/Restore (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-restore-build",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Run/Restore/DbUpdate (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-restore-dbupdate",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Run/DbUpdate (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-dbupdate",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Run (CMD)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "cmd-build",
@@ -10,23 +43,6 @@
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
             "console": "externalTerminal"
-        },
-        {
-            "name": "Run console with dbupdate (CMD)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "cmd-dbupdate-and-build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "stopAtEntry": false,
-            "console": "externalTerminal"
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
         }
     ]
 }

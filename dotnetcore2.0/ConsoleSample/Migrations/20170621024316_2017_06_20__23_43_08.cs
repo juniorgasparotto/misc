@@ -4,22 +4,22 @@ using System.Collections.Generic;
 
 namespace ConsoleSample.Migrations
 {
-    public partial class test : Migration
+    public partial class _2017_06_20__23_43_08 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Url3",
-                table: "Blogs",
-                newName: "Url");
+            migrationBuilder.DropColumn(
+                name: "B",
+                table: "Posts");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Url",
-                table: "Blogs",
-                newName: "Url3");
+            migrationBuilder.AddColumn<int>(
+                name: "B",
+                table: "Posts",
+                nullable: false,
+                defaultValue: 0);
         }
     }
 }
