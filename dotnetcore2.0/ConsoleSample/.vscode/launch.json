@@ -1,32 +1,10 @@
 {
     "version": "0.2.0",
     "configurations": [{
-            "name": "Run/Restore (CMD)",
+            "name": "First Build (CMD)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "cmd-restore-build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "stopAtEntry": false,
-            "console": "externalTerminal"
-        },
-        {
-            "name": "Run/Restore/DbUpdate (CMD)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "cmd-restore-dbupdate",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "stopAtEntry": false,
-            "console": "externalTerminal"
-        },
-        {
-            "name": "Run/DbUpdate (CMD)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "cmd-dbupdate",
+            "preLaunchTask": "cmd-first-build",
             "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
@@ -43,6 +21,56 @@
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
             "console": "externalTerminal"
+        }, {
+            "name": "Run/DbUpdate (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-dbupdate",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Clean (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "scripts\\clean.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Clean All (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "scripts\\clean-all.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "DropDb (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "scripts\\dropdb.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Restore (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "scripts\\restore.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
         }
     ]
 }

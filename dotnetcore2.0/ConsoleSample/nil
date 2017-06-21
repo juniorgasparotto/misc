@@ -1,0 +1,4 @@
+        protected override void BuildModel(ModelBuilder modelBuilder)
+            modelBuilder.Entity("ConsoleSample.Blog", b =>
+            modelBuilder.Entity("ConsoleSample.Post", b =>
+            modelBuilder.Entity("ConsoleSample.Post", b =>

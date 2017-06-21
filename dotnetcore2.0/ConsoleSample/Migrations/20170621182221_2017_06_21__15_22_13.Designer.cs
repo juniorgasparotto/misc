@@ -9,8 +9,8 @@ using System;
 namespace ConsoleSample.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20170621024242_2017_06_20__23_42_36")]
-    partial class _2017_06_20__23_42_36
+    [Migration("20170621182221_2017_06_21__15_22_13")]
+    partial class _2017_06_21__15_22_13
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,8 +34,6 @@ namespace ConsoleSample.Migrations
                 {
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("B");
 
                     b.Property<int>("BlogId");
 
