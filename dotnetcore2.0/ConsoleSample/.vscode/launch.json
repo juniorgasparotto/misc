@@ -53,6 +53,16 @@
             "console": "internalConsole"
         },
         {
+            "name": "Clean Migrations (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\clean-migrations.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
             "name": "DropDb (CMD)",
             "type": "coreclr",
             "request": "launch",

@@ -21,7 +21,7 @@ namespace ConsoleSample
                 {
                     Blog = new Blog()
                     {
-                        Url = "teste"
+                        Url2 = "teste"
                     },
                 };
 

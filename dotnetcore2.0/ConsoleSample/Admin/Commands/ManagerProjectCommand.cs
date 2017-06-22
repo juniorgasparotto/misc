@@ -8,6 +8,16 @@ namespace Admin.Commands
 {
     public class ManagerProjectCommand : Command
     {
+        public void CleanMigrationsFiles()
+        {
+            var files = Directory.GetFiles("Migrations");
+            foreach(var file in files)
+            {
+                if (Path.GetFileName(file).StartsWith("2")) 
+                    File.Delete(file);
+            }
+        }
+
         public void CleanEmptyMigrationsFiles()
         {
             var files = Directory.GetFiles("Migrations");

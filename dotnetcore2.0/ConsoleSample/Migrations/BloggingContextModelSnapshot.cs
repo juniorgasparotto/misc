@@ -22,7 +22,7 @@ namespace ConsoleSample.Migrations
                     b.Property<int>("BlogId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Url2");
 
                     b.HasKey("BlogId");
 
