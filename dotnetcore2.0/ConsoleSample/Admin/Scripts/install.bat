@@ -1,4 +1,4 @@
-@echo on
+@echo OFF
 setlocal
 :PROMPT
 SET /P AREYOUSURE="Are you sure you want to install/reinstall this project? In case of reinstallation, this process will exclude all data, including the database. (y/[n])? "
@@ -11,8 +11,8 @@ echo.
 SET /P projName="Project name: "
 IF /I "%projName%" == "" GOTO ENTER
 
-echo.
-echo Installing...
+echo *** Installing...
+echo *** Setting namespace to %projName%...
 
 PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\install.ps1 "%currentName%" "%projName%"
 echo %projName%>admin\config
