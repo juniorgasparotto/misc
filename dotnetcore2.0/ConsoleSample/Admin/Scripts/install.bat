@@ -17,7 +17,7 @@ echo "Installing..."
 SET /P projName="Project name: "
 IF /I "%projName%" == "" GOTO ENTER
 
-PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\install.ps1 "ConsoleSample" "%projName%";
+PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\install.ps1 "ConsoleSample" "%projName%"
 dotnet restore
 echo "Intall done!" 
 timeout 100
