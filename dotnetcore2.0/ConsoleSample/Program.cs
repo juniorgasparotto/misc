@@ -1,10 +1,10 @@
-﻿using SysCommand.ConsoleApp;
+using SysCommand.ConsoleApp;
 using System;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace ConsoleSample
+namespace asdas
 {
     public class Program : Command
     {

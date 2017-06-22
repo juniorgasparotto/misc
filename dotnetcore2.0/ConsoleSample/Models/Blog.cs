@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ConsoleSample
+namespace asdas
 {
     public class Blog
     {

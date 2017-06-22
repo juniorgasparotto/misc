@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ConsoleSample
+namespace asdas
 {
     public class BloggingContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SysCommand.ConsoleApp;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace ConsoleSample
+namespace asdas
 {
     public static class ConfigurationManager
     {

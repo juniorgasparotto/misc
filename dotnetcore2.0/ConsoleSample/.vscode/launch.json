@@ -16,7 +16,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "cmd-build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/ConsoleSample.dll",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/asdas.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
