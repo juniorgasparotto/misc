@@ -30,6 +30,10 @@ echo *** Rename "%currentName%.csproj" to "%projName%.csproj"...
 ren "%currentName%.csproj" "%projName%.csproj"
 
 echo.
+echo *** Rename "%currentName%.sln" to "%projName%.sln"...
+ren "%currentName%.sln" "%projName%.sln"
+
+echo.
 echo *** Restore packages...
 dotnet restore
 
