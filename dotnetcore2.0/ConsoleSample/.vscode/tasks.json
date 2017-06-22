@@ -7,7 +7,7 @@
     "tasks": [{
             "taskName": "cmd-first-build",
             "command": "cmd",
-            "args": ["/C", "dotnet restore & scripts\\dbupdate.bat"],
+            "args": ["/C", "dotnet restore & admin\\Scripts\\dbupdate.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
@@ -29,7 +29,7 @@
         {
             "taskName": "cmd-dbupdate",
             "command": "cmd",
-            "args": ["/C", "scripts\\dbupdate.bat"],
+            "args": ["/C", "admin\\Scripts\\dbupdate.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
@@ -37,7 +37,7 @@
         {
             "taskName": "cmd-clean",
             "command": "cmd",
-            "args": ["/C", "scripts\\clean.bat"],
+            "args": ["/C", "admin\\Scripts\\clean.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
@@ -45,7 +45,7 @@
         {
             "taskName": "cmd-clean-all",
             "command": "cmd",
-            "args": ["/C", "scripts\\clean-all.bat"],
+            "args": ["/C", "admin\\Scripts\\clean-all.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
@@ -53,7 +53,7 @@
         {
             "taskName": "cmd-drop-db",
             "command": "cmd",
-            "args": ["/C", "scripts\\dropdb.bat"],
+            "args": ["/C", "admin\\Scripts\\dropdb.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
@@ -61,7 +61,7 @@
         {
             "taskName": "cmd-restore",
             "command": "cmd",
-            "args": ["/C", "scripts\\restore.bat"],
+            "args": ["/C", "admin\\Scripts\\restore.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true

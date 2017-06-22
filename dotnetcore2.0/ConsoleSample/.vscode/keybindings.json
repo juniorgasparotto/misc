@@ -1,6 +1,0 @@
-// Place your key bindings in this file to overwrite the defaults
-[{
-    "key": "ctrl+2",
-    "command": "echo 1",
-    "when": ""
-}]
