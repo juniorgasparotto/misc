@@ -5,9 +5,9 @@
     "showOutput": "always",
     "echoCommand": true,
     "tasks": [{
-            "taskName": "cmd-first-build",
+            "taskName": "cmd-install",
             "command": "cmd",
-            "args": ["/C", "dotnet restore & admin\\Scripts\\dbupdate.bat"],
+            "args": ["/C", "admin\\Scripts\\install.bat"],
             "suppressTaskName": true,
             "showOutput": "always",
             "echoCommand": true
