@@ -10,6 +10,7 @@ echo "Deleting 'bin' and 'obj' folder if exists..."
 
 IF EXIST "obj" rd /s /q "obj"
 IF EXIST "bin" rd /s /q "bin"
+IF EXIST "Migrations" rd /s /q "Migrations"
 
 echo "Installing..."
 
