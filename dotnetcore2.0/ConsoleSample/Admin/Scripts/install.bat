@@ -11,6 +11,7 @@ echo.
 SET /P projName="Project name: "
 IF /I "%projName%" == "" GOTO ENTER
 
+echo.
 echo *** Installing...
 echo *** Setting namespace to %projName%...
 
@@ -18,28 +19,31 @@ PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\install.ps1 "%c
 echo %projName%>admin\config
 
 echo.
-echo Deleting 'bin', 'obj', 'Migrations' folder if exists...
+echo *** Deleting 'bin', 'obj', 'Migrations' folder if exists...
 
 IF EXIST "obj" rd /s /q "obj"
 IF EXIST "bin" rd /s /q "bin"
 IF EXIST "Migrations" rd /s /q "Migrations"
 
 echo.
-echo Rename to %projName%...
+echo *** Rename "%currentName%.csproj" to "%projName%.csproj"...
 ren "%currentName%.csproj" "%projName%.csproj"
-pause
+
 echo.
-echo "Restore packages..."
+echo *** Restore packages...
 dotnet restore
-pause
-echo "Deleting database if exists..."
+
+echo.
+echo *** Deleting database if exists...
 dotnet ef database drop -f
 
-echo "Creating database..."
-
+echo.
+echo *** Creating database...
 admin\Scripts\dbupdate.bat
 
-echo "Install done!"
+echo.
+echo *** DONE!
+
 timeout 100
 
 :END
