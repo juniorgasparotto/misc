@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace asdas
+namespace ConsoleSample
 {
     public static class ConfigurationManager
     {

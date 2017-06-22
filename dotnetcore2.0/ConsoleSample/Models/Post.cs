@@ -1,4 +1,4 @@
-namespace asdas
+namespace ConsoleSample
 {
     public class Post
     {
