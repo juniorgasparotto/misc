@@ -1,0 +1,86 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "Install/Reinstall (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-install",
+            "program": "admin\\Scripts\\install.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Run (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-build",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/MVCSample.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        }, {
+            "name": "Run/DbUpdate (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-dbupdate",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/${workspaceRootFolderName}.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Clean (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\clean.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Clean All (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\clean-all.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Clean Migrations (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\clean-migrations.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "DropDb (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\dropdb.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Restore (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\restore.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }
+    ]
+}
