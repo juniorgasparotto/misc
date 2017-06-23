@@ -14,7 +14,7 @@ namespace MVCSample
         static void Main(string[] args)
         {
             BuildWebHost(args).Run();
-            App.RunApplication();
+            //App.RunApplication();
         }
 
         [Action(Ignore=true)]

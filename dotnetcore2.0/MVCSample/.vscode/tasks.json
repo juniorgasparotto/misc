@@ -1,70 +1,14 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "showOutput": "always",
-    "echoCommand": true,
+    "command": "dotnet",
+    "isShellCommand": true,
+    "args": [],
     "tasks": [{
-            "taskName": "cmd-install",
-            "command": "cmd",
-            "args": ["/C", "admin\\Scripts\\install.bat"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        }, {
-            "taskName": "cmd-build",
-            "command": "cmd",
-            "args": ["/C dotnet build"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        }, {
-            "taskName": "cmd-restore-build",
-            "command": "cmd",
-            "args": ["/C dotnet restore & dotnet build"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        },
-        {
-            "taskName": "cmd-dbupdate",
-            "command": "cmd",
-            "args": ["/C", "admin\\Scripts\\dbupdate.bat"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        },
-        {
-            "taskName": "cmd-clean",
-            "command": "cmd",
-            "args": ["/C", "admin\\Scripts\\clean.bat"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        },
-        {
-            "taskName": "cmd-clean-all",
-            "command": "cmd",
-            "args": ["/C", "admin\\Scripts\\clean-all.bat"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        },
-        {
-            "taskName": "cmd-drop-db",
-            "command": "cmd",
-            "args": ["/C", "admin\\Scripts\\dropdb.bat"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        },
-        {
-            "taskName": "cmd-restore",
-            "command": "cmd",
-            "args": ["/C", "admin\\Scripts\\restore.bat"],
-            "suppressTaskName": true,
-            "showOutput": "always",
-            "echoCommand": true
-        }
-    ]
+        "taskName": "build",
+        "args": [
+            "${workspaceRoot}/MVCSample.csproj"
+        ],
+        "isBuildCommand": true,
+        "problemMatcher": "$msCompile"
+    }]
 }
