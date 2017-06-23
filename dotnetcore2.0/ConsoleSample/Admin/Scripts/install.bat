@@ -15,7 +15,7 @@ echo.
 echo *** Installing...
 echo *** Setting namespace to %projName%...
 
-PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\install.ps1 "%currentName%" "%projName%"
+PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\replace.ps1 "%currentName%" "%projName%"
 IF EXIST "%currentName%.csproj" echo %projName%>admin\config
 
 echo.
