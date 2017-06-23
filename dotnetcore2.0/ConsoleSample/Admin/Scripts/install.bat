@@ -16,7 +16,7 @@ echo *** Installing...
 echo *** Setting namespace to %projName%...
 
 PowerShell.exe -ExecutionPolicy RemoteSigned -File admin\Scripts\install.ps1 "%currentName%" "%projName%"
-echo %projName%>admin\config
+IF EXIST "%projName%.csproj" echo %projName%>admin\config
 
 echo.
 echo *** Deleting 'bin', 'obj', 'Migrations' folder if exists...
@@ -27,11 +27,11 @@ IF EXIST "Migrations" rd /s /q "Migrations"
 
 echo.
 echo *** Rename "%currentName%.csproj" to "%projName%.csproj"...
-ren "%currentName%.csproj" "%projName%.csproj"
+IF EXIST "%currentName%.csproj" ren "%currentName%.csproj" "%projName%.csproj"
 
 echo.
 echo *** Rename "%currentName%.sln" to "%projName%.sln"...
-ren "%currentName%.sln" "%projName%.sln"
+IF EXIST "%currentName%.sln" ren "%currentName%.sln" "%projName%.sln"
 
 echo.
 echo *** Restore packages...
@@ -43,13 +43,15 @@ dotnet ef database drop -f
 
 echo.
 echo *** Creating database...
-admin\Scripts\dbupdate.bat
+set now=%date:~-4%_%date:~3,2%_%date:~0,2%__%time:~0,2%_%time:~3,2%_%time:~6,2%
+dotnet ef migrations add %now%
+dotnet run clean-empty-migrations-files
+dotnet ef database update
 
 echo.
 echo *** DONE!
 
-timeout 100
+pause
 
 :END
 endlocal
-
