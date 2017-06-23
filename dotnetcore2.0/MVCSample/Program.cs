@@ -3,6 +3,9 @@ using System;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore;
+using SysCommand.Mapping;
 
 namespace MVCSample
 {
@@ -10,8 +13,15 @@ namespace MVCSample
     {
         static void Main(string[] args)
         {
+            BuildWebHost(args).Run();
             App.RunApplication();
         }
+
+        [Action(Ignore=true)]
+        public static IWebHost BuildWebHost(string[] args) =>
+                    WebHost.CreateDefaultBuilder(args)
+                        .UseStartup<Startup>()
+                        .Build();
 
         public void AddPost()
         {
