@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace ConsoleSample
+namespace Teste
 {
     public class Program : Command
     {
@@ -21,7 +21,7 @@ namespace ConsoleSample
                 {
                     Blog = new Blog()
                     {
-                        Url2 = "teste"
+                        Url2 = "Teste"
                     },
                 };
 

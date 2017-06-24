@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleSample.Migrations
+namespace Teste.Migrations
 {
-    public partial class _2017_06_23__11_16_13 : Migration
+    public partial class _2017_06_24__10_42_34 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

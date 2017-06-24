@@ -1,4 +1,4 @@
-namespace ConsoleSample
+namespace Teste
 {
     public class Post
     {
