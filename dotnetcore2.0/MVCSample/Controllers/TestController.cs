@@ -10,7 +10,7 @@ using MVCSample.Models;
 
 namespace MVCSample.Controllers
 {
-    public class ReportController : Controller
+    public class TestController : Controller
     {
         //
         // GET: /Account/SignIn
