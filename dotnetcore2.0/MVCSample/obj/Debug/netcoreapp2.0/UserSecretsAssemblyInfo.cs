@@ -3,4 +3,4 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-SpentBook.Web-2C15CD8A-9861-4301-98D1-2A8CC43499A9")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-MVCSample-2C15CD8A-9861-4301-98D1-2A8CC43499A9")]

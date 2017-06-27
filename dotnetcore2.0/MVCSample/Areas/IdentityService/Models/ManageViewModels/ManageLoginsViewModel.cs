@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace SpentBook.Web.Identity.Models.ManageViewModels
+namespace MVCSample.Identity.Models.ManageViewModels
 {
     public class ManageLoginsViewModel
     {

@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.Service;
 using Microsoft.AspNetCore.Identity.Service.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using SpentBook.Web.Identity.Models;
+using MVCSample.Identity.Models;
 
-namespace SpentBook.Web.Identity.Data
+namespace MVCSample.Identity.Data
 {
     public class IdentityServiceDbContext : IdentityServiceDbContext<ApplicationUser, IdentityServiceApplication>
     {

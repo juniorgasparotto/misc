@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.Service.Extensions;
 
-namespace SpentBook.Web.Identity
+namespace MVCSample.Identity
 {
     // These values are used to setup the identity servcie and should not be changed
     public class IdentityServiceConstants

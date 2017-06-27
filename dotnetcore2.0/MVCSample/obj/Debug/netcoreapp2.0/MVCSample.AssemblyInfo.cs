@@ -3,11 +3,11 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("SpentBook.Web")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MVCSample")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Package Description")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("SpentBook.Web")]
-[assembly: System.Reflection.AssemblyTitleAttribute("SpentBook.Web")]
+[assembly: System.Reflection.AssemblyProductAttribute("MVCSample")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MVCSample")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Identity.Service.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using SpentBook.Web.Identity.Models;
-using SpentBook.Web.Identity.Models.AccountViewModels;
-using SpentBook.Web.Identity.Services;
+using MVCSample.Identity.Models;
+using MVCSample.Identity.Models.AccountViewModels;
+using MVCSample.Identity.Services;
 
-namespace SpentBook.Web.Identity.Controllers
+namespace MVCSample.Identity.Controllers
 {
     [Area("IdentityService")]
     [IdentityServiceRoute("[controller]/[action]")]

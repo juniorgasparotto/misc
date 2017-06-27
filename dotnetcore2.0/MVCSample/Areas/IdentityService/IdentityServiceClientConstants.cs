@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SpentBook.Web.Identity
+namespace MVCSample.Identity
 {
     // Values used to register the client application with the identity service
     // To update the registered client, change the values here and then use the 
@@ -11,7 +11,7 @@ namespace SpentBook.Web.Identity
     public class IdentityServiceClientConstants
     {
         // Client application name
-        public const string ClientName = "SpentBook.Web";
+        public const string ClientName = "MVCSample";
 
         // Client redirect URI
         public const string ClientRedirectUri = "urn:self:aspnet:identity:integrated";

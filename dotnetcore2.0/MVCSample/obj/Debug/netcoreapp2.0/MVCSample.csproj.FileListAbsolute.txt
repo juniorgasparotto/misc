@@ -1,0 +1,12 @@
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\x86\e_sqlite3.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\x64\e_sqlite3.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\MVCSample.deps.json
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\MVCSample.runtimeconfig.json
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\MVCSample.runtimeconfig.dev.json
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\MVCSample.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\bin\Debug\netcoreapp2.0\MVCSample.pdb
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\obj\Debug\netcoreapp2.0\MVCSample.csproj.CoreCompileInputs.cache
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\obj\Debug\netcoreapp2.0\MVCSample.AssemblyInfo.cs
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\obj\Debug\netcoreapp2.0\MVCSample.dll
+d:\Junior\Projetos\GITHUB.COM\juniorgasparotto\misc\dotnetcore2.0\MVCSample\obj\Debug\netcoreapp2.0\MVCSample.pdb

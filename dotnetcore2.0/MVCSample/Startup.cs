@@ -13,9 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using SpentBook.Web.Models;
+using MVCSample.Models;
 
-namespace SpentBook.Web
+namespace MVCSample
 {
     public class Startup
     {

@@ -21,7 +21,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "SpentBook.Web/1.0.0": {
+      "MVCSample/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0-preview1-final",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0-preview1-final",
@@ -30,10 +30,10 @@
           "SysCommand": "1.0.9"
         },
         "runtime": {
-          "SpentBook.Web.dll": {}
+          "MVCSample.dll": {}
         },
         "compile": {
-          "SpentBook.Web.dll": {}
+          "MVCSample.dll": {}
         }
       },
       "Libuv/1.10.0-preview1-22040": {
@@ -4514,7 +4514,7 @@
     }
   },
   "libraries": {
-    "SpentBook.Web/1.0.0": {
+    "MVCSample/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

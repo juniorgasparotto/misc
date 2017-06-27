@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Identity.Service;
 using Microsoft.AspNetCore.Identity.Service.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using SpentBook.Web.Identity.Models;
+using MVCSample.Identity.Models;
 
-namespace SpentBook.Web.Identity.Controllers
+namespace MVCSample.Identity.Controllers
 {
     [Area("IdentityService")]
     [IdentityServiceRoute(IdentityServiceConstants.DefaultPolicy)]

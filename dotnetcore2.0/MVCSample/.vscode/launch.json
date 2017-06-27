@@ -14,7 +14,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SpentBook.Web.dll",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/MVCSample.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
@@ -28,7 +28,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SpentBook.Web.dll",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/MVCSample.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
@@ -53,15 +53,34 @@
                 "/Views": "${workspaceRoot}/Views"
             }
         }, {
-            "name": "Run/DbUpdate (CMD)",
+            "name": "Run/DbUpdate (web)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "cmd-dbupdate",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SpentBook.Web.dll",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/MVCSample.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
-            "console": "externalTerminal"
+            "launchBrowser": {
+                "enabled": true,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceRoot}/Views"
+            }
         },
         {
             "name": "Clean (CMD)",

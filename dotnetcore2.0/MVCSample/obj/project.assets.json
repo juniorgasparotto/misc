@@ -13449,10 +13449,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Junior\\Projetos\\GITHUB.COM\\juniorgasparotto\\SpentBook\\src2\\SpentBook.Web\\SpentBook.Web.csproj",
-      "projectName": "SpentBook.Web",
-      "projectPath": "d:\\Junior\\Projetos\\GITHUB.COM\\juniorgasparotto\\SpentBook\\src2\\SpentBook.Web\\SpentBook.Web.csproj",
-      "outputPath": "d:\\Junior\\Projetos\\GITHUB.COM\\juniorgasparotto\\SpentBook\\src2\\SpentBook.Web\\obj\\",
+      "projectUniqueName": "d:\\Junior\\Projetos\\GITHUB.COM\\juniorgasparotto\\misc\\dotnetcore2.0\\MVCSample\\MVCSample.csproj",
+      "projectName": "MVCSample",
+      "projectPath": "d:\\Junior\\Projetos\\GITHUB.COM\\juniorgasparotto\\misc\\dotnetcore2.0\\MVCSample\\MVCSample.csproj",
+      "outputPath": "d:\\Junior\\Projetos\\GITHUB.COM\\juniorgasparotto\\misc\\dotnetcore2.0\\MVCSample\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp2.0"

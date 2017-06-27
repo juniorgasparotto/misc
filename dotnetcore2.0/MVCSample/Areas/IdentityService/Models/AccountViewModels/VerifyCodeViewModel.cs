@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SpentBook.Web.Identity.Models.AccountViewModels
+namespace MVCSample.Identity.Models.AccountViewModels
 {
     public class VerifyCodeViewModel
     {

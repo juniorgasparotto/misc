@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SpentBook.Web.Identity.Services
+namespace MVCSample.Identity.Services
 {
     public interface ISmsSender
     {

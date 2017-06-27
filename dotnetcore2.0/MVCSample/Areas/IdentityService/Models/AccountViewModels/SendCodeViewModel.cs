@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace SpentBook.Web.Identity.Models.AccountViewModels
+namespace MVCSample.Identity.Models.AccountViewModels
 {
     public class SendCodeViewModel
     {

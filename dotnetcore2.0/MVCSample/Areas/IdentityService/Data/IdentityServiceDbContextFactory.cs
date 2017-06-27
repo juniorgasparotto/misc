@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SpentBook.Web.Identity.Data
+namespace MVCSample.Identity.Data
 {
     public class IdentityServiceDbContextFactory : IDbContextFactory<IdentityServiceDbContext>
     {

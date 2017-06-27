@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
-using SpentBook.Web.Models;
+using MVCSample.Models;
 
-namespace SpentBook.Web.Controllers
+namespace MVCSample.Controllers
 {
     public class ReportController : Controller
     {

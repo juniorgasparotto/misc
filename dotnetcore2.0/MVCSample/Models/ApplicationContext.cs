@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace SpentBook.Web.Models
+namespace MVCSample.Models
 {
     public class ApplicationContext : DbContext
     {

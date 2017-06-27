@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using SpentBook.Web.Models;
+using MVCSample.Models;
 using System;
 
-namespace SpentBook.Web.Migrations
+namespace MVCSample.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20170626212053_Init")]
-    partial class Init
+    [Migration("20170627225303_2017_06_27__19_52_55")]
+    partial class _2017_06_27__19_52_55
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace SpentBook.Web.Migrations
                 .HasAnnotation("ProductVersion", "2.0.0-preview1-24937")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SpentBook.Web.Models.Blog", b =>
+            modelBuilder.Entity("MVCSample.Models.Blog", b =>
                 {
                     b.Property<int>("BlogId")
                         .ValueGeneratedOnAdd();
@@ -30,7 +30,7 @@ namespace SpentBook.Web.Migrations
                     b.ToTable("Blogs");
                 });
 
-            modelBuilder.Entity("SpentBook.Web.Models.Post", b =>
+            modelBuilder.Entity("MVCSample.Models.Post", b =>
                 {
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd();
@@ -46,9 +46,9 @@ namespace SpentBook.Web.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("SpentBook.Web.Models.Post", b =>
+            modelBuilder.Entity("MVCSample.Models.Post", b =>
                 {
-                    b.HasOne("SpentBook.Web.Models.Blog", "Blog")
+                    b.HasOne("MVCSample.Models.Blog", "Blog")
                         .WithMany("Posts")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade);

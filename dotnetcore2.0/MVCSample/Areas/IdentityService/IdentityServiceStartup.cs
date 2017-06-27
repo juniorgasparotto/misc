@@ -10,15 +10,15 @@ using Microsoft.AspNetCore.Identity.Service.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SpentBook.Web.Identity.Data;
-using SpentBook.Web.Identity.Models;
-using SpentBook.Web.Identity.Services;
-using SpentBook.Web.Models;
+using MVCSample.Identity.Data;
+using MVCSample.Identity.Models;
+using MVCSample.Identity.Services;
+using MVCSample.Models;
 
 // HostingStartup's in the primary assembly are run automatically.
-[assembly: HostingStartup(typeof(SpentBook.Web.Identity.IdentityServiceStartup))]
+[assembly: HostingStartup(typeof(MVCSample.Identity.IdentityServiceStartup))]
 
-namespace SpentBook.Web.Identity
+namespace MVCSample.Identity
 {
     public class IdentityServiceStartup : IHostingStartup
     {

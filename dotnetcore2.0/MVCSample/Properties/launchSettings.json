@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SpentBook.Web": {
+    "MVCSample": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "https://localhost:44308/",

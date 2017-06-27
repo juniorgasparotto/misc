@@ -1,6 +1,6 @@
 using System;
 
-namespace SpentBook.Web.Models
+namespace MVCSample.Models
 {
     public class ErrorViewModel
     {
