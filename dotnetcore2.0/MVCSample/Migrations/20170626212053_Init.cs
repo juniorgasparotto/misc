@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace MVCSample.Migrations
+namespace SpentBook.Web.Migrations
 {
-    public partial class _2017_06_23__11_34_18 : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

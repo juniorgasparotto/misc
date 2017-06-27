@@ -1,4 +1,4 @@
-namespace MVCSample
+namespace SpentBook.Web.Models
 {
     public class Post
     {

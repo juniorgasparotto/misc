@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity.Service;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MVCSample.Identity.Data.Migrations
+namespace SpentBook.Web.Identity.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
@@ -306,8 +306,8 @@ namespace MVCSample.Identity.Data.Migrations
                 unique: true);
 
             // Seed client application
-            var clientAppId = "419C4C15-6BDB-401E-A8CB-7D60F3D7C787";
-            var clientId = "F098FBF7-6A51-4028-9C02-7F7891BBB3F8";
+            var clientAppId = "99235785-48C4-4041-8CB9-C2AF0EEAEF70";
+            var clientId = "2C15CD8A-9861-4301-98D1-2A8CC43499A9";
             migrationBuilder.Insert(
                 table: "AspNetApplications",
                 columns: new[] { "Id", "ClientId", "Name" },
@@ -316,7 +316,7 @@ namespace MVCSample.Identity.Data.Migrations
                     { clientAppId, clientId, IdentityServiceClientConstants.ClientName }
                 });
 
-            var clientOpenIdScopeId = "A1C65076-B3CF-408F-89BD-90C7FFFC2A92";
+            var clientOpenIdScopeId = "8BC239AC-D2B8-4D56-A489-C921E5E3AC3F";
             migrationBuilder.Insert(
                 table: "AspNetScopes",
                 columns: new[] { "Id", "ApplicationId", "Value" },
@@ -325,8 +325,8 @@ namespace MVCSample.Identity.Data.Migrations
                     { clientOpenIdScopeId, clientAppId, ApplicationScope.OpenId.Scope },
                 });
 
-            var clientRedirectUriId = "A467D2C6-9DD6-4FB0-989D-51E3DC423443";
-            var clientLogoutRedirectUriId = "45FD3C1C-27F0-43CC-A497-E6C002DADC19";
+            var clientRedirectUriId = "1484A5D8-5C6C-4525-B202-AA85AA9C108E";
+            var clientLogoutRedirectUriId = "6D9EBE87-5B9E-45E4-A6AD-467C11C97070";
             migrationBuilder.Insert(
                 table: "AspNetRedirectUris", 
                 columns: new[] { "Id", "ApplicationId", "IsLogout", "Value" },

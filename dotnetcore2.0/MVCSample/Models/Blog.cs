@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MVCSample
+namespace SpentBook.Web.Models
 {
     public class Blog
     {

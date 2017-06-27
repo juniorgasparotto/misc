@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Identity.Service.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using MVCSample.Identity.Models.HomeViewModels;
+using SpentBook.Web.Identity.Models.HomeViewModels;
 
-namespace MVCSample.Identity.Controllers
+namespace SpentBook.Web.Identity.Controllers
 {
     [Area("IdentityService")]
     [IdentityServiceRoute("")]

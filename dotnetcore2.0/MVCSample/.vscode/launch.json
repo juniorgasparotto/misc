@@ -1,19 +1,37 @@
 {
-    // Use IntelliSense to find out which attributes exist for C# debugging
-    // Use hover for the description of the existing attributes
-    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
     "version": "0.2.0",
     "configurations": [{
-            "name": ".NET Core Launch (web)",
+            "name": "Install/Reinstall (CMD)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/MVCSample.dll",
+            "program": "admin\\Scripts\\install.bat",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart",
+            "console": "externalTerminal"
+        }, {
+            "name": "Run (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SpentBook.Web.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "externalConsole": true,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "name": "Run (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SpentBook.Web.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
             "launchBrowser": {
                 "enabled": true,
                 "args": "${auto-detect-url}",
@@ -34,12 +52,55 @@
             "sourceFileMap": {
                 "/Views": "${workspaceRoot}/Views"
             }
+        }, {
+            "name": "Run/DbUpdate (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "cmd-dbupdate",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SpentBook.Web.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
         },
         {
-            "name": ".NET Core Attach",
+            "name": "Clean (CMD)",
             "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
+            "request": "launch",
+            "program": "admin\\Scripts\\clean.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Clean All (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\clean-all.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }, {
+            "name": "DropDb (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\dropdb.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Restore (CMD)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "admin\\Scripts\\restore.bat",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
         }
     ]
 }

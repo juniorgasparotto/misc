@@ -1,43 +1,35 @@
-using SysCommand.ConsoleApp;
 using System;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 using System.IO;
-using Microsoft.AspNetCore.Hosting;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore;
-using SysCommand.Mapping;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using SysCommand.ConsoleApp;
 
-namespace MVCSample
+namespace SpentBook.Web
 {
-    public class Program : Command
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
-            //App.RunApplication();
-        }
-
-        [Action(Ignore=true)]
-        public static IWebHost BuildWebHost(string[] args) =>
-                    WebHost.CreateDefaultBuilder(args)
-                        .UseStartup<Startup>()
-                        .Build();
-
-        public void AddPost()
-        {
-            using (var context = new BloggingContext())
+            if (args.FirstOrDefault() == "--admin")
             {
-                var post = new Post
-                {
-                    Blog = new Blog()
-                    {
-                        Url2 = "teste"
-                    },
-                };
-
-                context.Add(post);
-                context.SaveChanges();
+                var app = new App();
+                var argsList = args.ToList();
+                argsList.RemoveAt(0);
+                app.Run(argsList.ToArray());
+            }
+            else {
+                BuildWebHost(args).Run();
             }
         }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
     }
 }

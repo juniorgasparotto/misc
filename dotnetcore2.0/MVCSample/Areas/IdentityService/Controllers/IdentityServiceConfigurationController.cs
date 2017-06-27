@@ -1,12 +1,12 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Service;
 using Microsoft.AspNetCore.Identity.Service.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using MVCSample.Identity.Models;
+using SpentBook.Web.Identity.Models;
 
-namespace MVCSample.Identity.Controllers
+namespace SpentBook.Web.Identity.Controllers
 {
     [Area("IdentityService")]
     [IdentityServiceRoute(IdentityServiceConstants.DefaultPolicy)]
