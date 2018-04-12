@@ -1,0 +1,6 @@
+D:\GIT\B2B-COMPONENTS\b2b-components\xmlbeautifier\bin\Debug\xmlbeautifier.exe.config
+D:\GIT\B2B-COMPONENTS\b2b-components\xmlbeautifier\bin\Debug\xmlbeautifier.exe
+D:\GIT\B2B-COMPONENTS\b2b-components\xmlbeautifier\bin\Debug\xmlbeautifier.pdb
+D:\GIT\B2B-COMPONENTS\b2b-components\xmlbeautifier\obj\Debug\xmlbeautifier.csprojResolveAssemblyReference.cache
+D:\GIT\B2B-COMPONENTS\b2b-components\xmlbeautifier\obj\Debug\xmlbeautifier.exe
+D:\GIT\B2B-COMPONENTS\b2b-components\xmlbeautifier\obj\Debug\xmlbeautifier.pdb

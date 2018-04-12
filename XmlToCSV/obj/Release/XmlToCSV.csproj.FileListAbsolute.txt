@@ -1,0 +1,7 @@
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\WiremockUI\src\WiremockUI.Publish\Output\Build\Release\XmlToCSV.exe.config
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\WiremockUI\src\WiremockUI.Publish\Output\Build\Release\XmlToCSV.exe
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\WiremockUI\src\WiremockUI.Publish\Output\Build\Release\XmlToCSV.pdb
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\XmlToCSV\obj\Release\XmlToCSV.csprojResolveAssemblyReference.cache
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\XmlToCSV\obj\Release\XmlToCSV.csproj.CoreCompileInputs.cache
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\XmlToCSV\obj\Release\XmlToCSV.exe
+D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\XmlToCSV\obj\Release\XmlToCSV.pdb

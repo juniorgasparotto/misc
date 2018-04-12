@@ -1,0 +1,52 @@
+<script src="DynamicTable.js"></script>
+
+<html>
+	<body>
+		<center>
+		 <div id="ODiv" >
+		 </div>
+		 </center>
+
+<input type="button" onClick="AddLine();" name="a" value="Add line">
+<br>
+<br>
+<br>
+<br>
+<textarea name="t" id="debug" rows="100" cols="100"></textarea>
+	</body>
+</html>
+
+
+<script>
+	var a = new Array(10);
+	var b = new Array(10);
+	var Tb = new DynamicTable("");
+
+	Tb.AddColumn ( {Id:'', ColumnName: "Nome", DataSourceColumn: "nome", DataSource: 0} );
+	Tb.AddColumn ( {Id:'', ColumnName: "Idade", DataSourceColumn: "campo1", DataSource: 1} );
+	
+	for (var i=0;i<10;i++) {
+		a[i] = new Array();
+		a[i].nome 	= " A" + i;
+		a[i].idade  = "" + i;
+	}
+
+	for (var i=0;i<5;i++) {
+		b[i] = new Array();
+		b[i].campo1	= "DATASORCE B" + i;
+		b[i].campo2 = "" + i;
+	}
+
+	Tb.DataSources = Array(a,b);
+	Tb.Bind();
+	Tb.Append(document.getElementById("ODiv"));
+	//document.getElementById("debug").value = document.getElementById("ODiv").innerHTML;
+	
+	function AddLine() 
+	{
+		Tb.AddLine(Array(a[1],b[3]),true);
+		
+		//Tb.AddLine(a[9]);
+		document.getElementById("debug").value = document.getElementById("ODiv").innerHTML;
+	}
+</script>
